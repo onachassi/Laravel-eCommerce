@@ -1,45 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('layouts.master')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('title')
+    Home
+@endsection
 
-        <style>
-            html, body {
-                height: 100%;
-            }
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+@section('body')
+    <div>
+        <h2>Here is a Body</h2>
+        <p>Here is a paragraph</p>
+    </div>
+<!-- sign up form -->
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
+        <!-- Signup form end -->
+        <!-- Login form -->
+        <div class="col-md-5">
+            <h2>Log In</h2>
+            <form action="#" method="post" style="margin-left: 25px;">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class='form-control' type="text" name="email" placeholder="Email" id="email-input">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input class='form-control' type="password" name="password" placeholder="Password" id="password-input">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
-    </body>
-</html>
+        <!-- login form end -->
+    </div>
+@endsection

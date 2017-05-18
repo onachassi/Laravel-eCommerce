@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::group(['middlewear' => ['web']], function(){
+
+	Route::get('/', function () {
+	    return view('welcome');
+	});
+
+	Route::get('/signup', [
+		'uses' => 'UserController@getSignup',
+		'as' => 'getSignup'
+	]);
+
+	Route::post('/signup', [
+		'uses' => 'UserController@postSignup',
+		'as' => 'signup'
+	]);
 });
