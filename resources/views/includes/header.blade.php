@@ -6,7 +6,6 @@
 				<a href="#">{{ ucfirst(Auth::user()->name) }} </a><span>|</span><a href="{{ route('getLogout') }}"> Log Out</a>
 		  @else 
 				<a href="{{ route('getLogin') }}">Login </a><span>|</span><a href="{{ route('getSignup') }}"> Sign-Up</a>
-			
 			@endif
 			</div>
 			<div class="nav-bar">

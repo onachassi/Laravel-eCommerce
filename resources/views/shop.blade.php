@@ -13,11 +13,13 @@
 			<div class="all-products">
 				@foreach($products as $product)
 					<div class="product">
+				<a href="{{route('showProduct', ['productId' => $product->id])}}">
 						<div class="image" style="height:200px; width:150px; margin: 10px; border: 2px solid black; background-color: grey"></div>
 						<div class="product-info">
-							<h4>{{ $product['name'] }}</h4>
-							<h4>{{ $product['price'] }}</h4>
+							<h4>{{ $product->name }}</h4>
+							<h4>{{ $product->price }}</h4>
 						</div>
+						</a>
 					</div>
 				@endforeach
 			</div>

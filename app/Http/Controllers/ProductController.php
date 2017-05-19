@@ -10,20 +10,30 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
-	public function getShop(){
+	// all products
+	public function getShop()
+	{
 		$products = Product::all();
-		return view('shop', ['products' => $products]);
+		return view('shop')->with('products', $products);
+	}
+	// product show page
+	public function showProduct($productId)
+	{
+		$product = Product::findOrFail($productId);
+		return view('product_show')->with('product', $product);
 	}
 
+	// admin show pages
+	// all product view
+	public function getProducts(){
+		$products = Product::all();
+		return view('admin-product-view')->with('products', $products);
+	}
+	// create product form
 	public function getProductForm(){
 		return view('productForm');
 	}
-
-	public function getProducts(){
-		$products = Product::all();
-		return view('admin-product-view', ['products' => $products]);
-	}
-
+	// create products 
 	public function postProductForm(Request $request) 
 	{
 		$this->validate($request, [
