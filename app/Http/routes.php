@@ -11,13 +11,42 @@
 |
 */
 
-
+// To make private routes add another config 'middleware' => 'auth'
 
 Route::group(['middlewear' => ['web']], function(){
 
 	Route::get('/', function () {
 	    return view('welcome');
-	});
+	})->name('root');
+
+	Route::get('/shop', [
+		'uses' => 'ProductController@getShop',
+		'as' => 'getShop'
+	]);
+
+// Need to create a cart controller and model
+	// Route::get('/cart', [
+	// 	'uses' => 'UserController@getLogin',
+	// 	'as' => 'getLogin'
+	// ]);
+
+	Route::get('/cart', function () {
+	    return view('cart');
+	})->name('cart');
+
+	Route::get('/contact', function () {
+	    return view('contact');
+	})->name('contact');
+
+	Route::get('/login', [
+		'uses' => 'UserController@getLogin',
+		'as' => 'getLogin'
+	]);
+
+	Route::post('/login', [
+		'uses' => 'UserController@postLogin',
+		'as' => 'login'
+	]);
 
 	Route::get('/signup', [
 		'uses' => 'UserController@getSignup',
@@ -28,4 +57,31 @@ Route::group(['middlewear' => ['web']], function(){
 		'uses' => 'UserController@postSignup',
 		'as' => 'signup'
 	]);
+
+	Route::get('/logout', [
+		'uses' => 'UserController@getLogout',
+		'as' => 'getLogout'
+	]);
+
+// admin stuff
+
+	Route::get('/admin/products', [
+		'uses' => 'ProductController@getProducts',
+		'as' => 'getProducts'
+	]);
+
+
+	Route::get('/admin/product/new', [
+		'uses' => 'ProductController@getProductForm',
+		'as' => 'getProductForm'
+	]);
+
+
+	Route::post('/admin/product/new', [
+		'uses' => 'ProductController@postProductForm',
+		'as' => 'postProductForm'
+	]);
+
+
+
 });
