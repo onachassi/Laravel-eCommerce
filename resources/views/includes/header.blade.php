@@ -12,7 +12,9 @@
 				<h1 class="header">OriCommerce</h1>
 				<a href="{{ route('root') }}">Home</a>
 				<a href="{{ route('getShop') }}">Shop</a>
-				<a href="{{ route('cart') }}">Cart</a>
+				@if (Session::has('cartId'))
+					<a href="{{ route('cart', Session::get('cartId')) }}">Cart</a>
+				@endif
 				<a href="{{ route('contact') }}">Contact</a>
 			</div>
 		</div>

@@ -34,10 +34,14 @@ Route::group(['middlewear' => ['web']], function(){
 		'as' => 'showProduct'
 	]);
 
+	Route::get('/cart/{cartId}', [
+		'uses' => 'CartController@getCart',
+		'as' => 'cart'
+	]);
 
-	Route::get('/cart', function () {
-	    return view('cart');
-	})->name('cart');
+	// Route::get('/cart', function () {
+	//     return view('cart');
+	// })->name('cart');
 
 	Route::get('/contact', function () {
 	    return view('contact');

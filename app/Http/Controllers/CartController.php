@@ -15,6 +15,14 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
 
+	public function getCart( $cartId )
+	{
+		$cart = Cart::find($cartId);
+		$cart_products = $cart->products;
+		return view('cart', ['products' => $cart_products, 'cart' => $cart]);
+		// ->with('products', $cart_products);
+	}
+
 	public function addToCart(Request $request, $productId)
 	{
 		if($request->session()->has('cartId')){
