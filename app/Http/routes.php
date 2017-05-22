@@ -21,8 +21,7 @@ Route::group(['middlewear' => ['web']], function(){
 
 	Route::get('/shop', [
 		'uses' => 'ProductController@getShop',
-		'as' => 'getShop',
-		'middleware' => 'auth'
+		'as' => 'getShop'
 	]);
 
 	Route::post('/shop/{productId}/addToCart', [
