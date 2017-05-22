@@ -39,10 +39,6 @@ Route::group(['middlewear' => ['web']], function(){
 		'as' => 'cart'
 	]);
 
-	// Route::get('/cart', function () {
-	//     return view('cart');
-	// })->name('cart');
-
 	Route::get('/contact', function () {
 	    return view('contact');
 	})->name('contact');
@@ -71,15 +67,6 @@ Route::group(['middlewear' => ['web']], function(){
 		'uses' => 'UserController@getLogout',
 		'as' => 'getLogout'
 	]);
-
-
-
-
-	// Route::get('/shop/{productId}', function($productId){
-	// 	$product = App\Product::findOrFail($productId);
-	// 	return View::make('product_show')->with('product', $product);
-	// })->name('product_show');
-
 
 // admin stuff
 
