@@ -15,15 +15,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="{{ URL::to('src/css/main.css') }}">
+<link rel="stylesheet" href="{{ URL::to('src/css/shop.css') }}">
 	<title>@yield('title') | OriCommerce</title>
 </head>
 <body>
-<!-- <div id="wrapper"> -->
 	@include('includes.header')
 	<div class='master-container' >
 		@yield('body')
 	</div>
 	@include('includes.footer')
-<!-- </div> -->
 </body>
 </html>

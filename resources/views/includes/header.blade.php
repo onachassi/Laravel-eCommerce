@@ -14,7 +14,7 @@
 					<a href="{{ route('root') }}">Home</a>
 					<a href="{{ route('getShop') }}">Shop</a>
 					@if (Session::has('cartId'))
-						<a href="{{ route('cart', Session::get('cartId')) }}">Cart</a>
+						<a href="{{ route('cart', Session::get('cartId')) }}">Cart <span class="badge">{{ App\Cart::find(Session::get('cartId'))->products()->count() }}</span></a>
 					@endif
 					<a href="{{ route('contact') }}">Contact</a>
 				</div>

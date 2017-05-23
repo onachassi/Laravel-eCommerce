@@ -1,0 +1,23 @@
+.shop-header {
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid darkred;
+}
+
+.shop-header > h2 {
+	margin-bottom: 5px;
+}
+
+.all-products {
+	display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product > a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
