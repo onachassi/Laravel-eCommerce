@@ -1,0 +1,54 @@
+/*#wrapper {
+	min-height: 100vh;
+	position: relative;
+}*/
+
+body {
+	margin-bottom: 70px;
+}
+
+footer {
+	margin-top: 50px;
+	height: 70px;
+	position: absolute;
+	width: 100%;
+  left: 0;
+  padding: 1em;
+  background-image: linear-gradient(to bottom,#fff 0,#f8f8f8 100%);
+  background-repeat: repeat-x;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 5px rgba(0,0,0,.075);
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  border: 1px solid transparent;
+}
+
+.login-signup {
+	float: right;
+}
+
+.nav-bar .header {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.nav-bar .nav-links {
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+.nav-bar .nav-links a {
+	font-size: 20px;
+	margin: 0px 10px 5px 10px;
+}
+
+.carousel-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-section {
+	margin-top: 50px;
+}

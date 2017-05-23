@@ -1,5 +1,5 @@
 <header>
-	<nav class='navbar navbar-default navbar-fixed-top'>
+	<nav class='navbar navbar-default'>
 		<div class="container">
 			<div class="login-signup">
 			@if (Auth::check())
@@ -10,12 +10,14 @@
 			</div>
 			<div class="nav-bar">
 				<h1 class="header">OriCommerce</h1>
-				<a href="{{ route('root') }}">Home</a>
-				<a href="{{ route('getShop') }}">Shop</a>
-				@if (Session::has('cartId'))
-					<a href="{{ route('cart', Session::get('cartId')) }}">Cart</a>
-				@endif
-				<a href="{{ route('contact') }}">Contact</a>
+				<div class="nav-links">
+					<a href="{{ route('root') }}">Home</a>
+					<a href="{{ route('getShop') }}">Shop</a>
+					@if (Session::has('cartId'))
+						<a href="{{ route('cart', Session::get('cartId')) }}">Cart</a>
+					@endif
+					<a href="{{ route('contact') }}">Contact</a>
+				</div>
 			</div>
 		</div>
 	</nav>
