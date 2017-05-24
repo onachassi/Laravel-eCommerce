@@ -15,10 +15,18 @@
 
 Route::group(['middlewear' => ['web']], function(){
 
+	// Static routes
+
 	Route::get('/', function () {
 	    return view('welcome');
 	})->name('root');
 
+	Route::get('/contact', function () {
+	    return view('contact');
+	})->name('contact');
+
+	// Dynamic Routes
+// Shop Routes
 	Route::get('/shop', [
 		'uses' => 'ProductController@getShop',
 		'as' => 'getShop'
@@ -34,15 +42,16 @@ Route::group(['middlewear' => ['web']], function(){
 		'as' => 'showProduct'
 	]);
 
+
+// Cart Routes
 	Route::get('/cart/{cartId}', [
 		'uses' => 'CartController@getCart',
 		'as' => 'cart'
 	]);
 
-	Route::get('/contact', function () {
-	    return view('contact');
-	})->name('contact');
 
+
+// User Routes
 	Route::get('/login', [
 		'uses' => 'UserController@getLogin',
 		'as' => 'getLogin'
@@ -68,13 +77,31 @@ Route::group(['middlewear' => ['web']], function(){
 		'as' => 'getLogout'
 	]);
 
-// admin stuff
+// Admin Routes -- protect
 
 	Route::get('/admin/products', [
 		'uses' => 'ProductController@getProducts',
 		'as' => 'getProducts'
 	]);
 
+// need to make views for these routes
+
+	// Route::get('/admin/product/{productId}', [
+	// 	'uses' => 'ProductController@getProduct',
+	// 	'as' => 'getProduct'
+	// ]);
+
+	// Route::get('/admin/product/{productId}/edit', [
+	// 	'uses' => 'ProductController@patchProductForm',
+	// 	'as' => 'patchProductForm'
+	// ]);
+
+	// Route::patch('/admin/product/{productId}', [
+	// 	'uses' => 'ProductController@updateProduct',
+	// 	'as' => 'patchProduct'
+	// ]);
+
+// end
 
 	Route::get('/admin/product/new', [
 		'uses' => 'ProductController@getProductForm',
